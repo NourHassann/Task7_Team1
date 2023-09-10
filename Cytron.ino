@@ -25,7 +25,7 @@ void setup() {
 
 void loop() {
   // call the function to start the movement. ------- in real time we will not call this function all time. 
-  Soft_start(255, LOW);   
+  Soft_start(255, LOW);   //set your desired Speed and Direction
 
 }
 /*********************************************Function Definition Start**************************************************/
