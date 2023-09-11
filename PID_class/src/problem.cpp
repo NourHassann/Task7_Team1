@@ -21,7 +21,7 @@ double PID::calculateOutput(int Feedback_pin)
 {
     now = millis();
     dt = (now - lastTime);
-    process_variable = analogRead(Feedback_pin);
+    process_variable = map(analogRead(Feedback_pin),0,1023,0,255);
     this->error = setpoint - process_variable;
     this->integral += error * dt;
     this->derivative = (error - previous_error) / dt;
