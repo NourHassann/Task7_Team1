@@ -4,7 +4,7 @@
 #define OUTPUT_PIN 3
 #define Desired_FlowRate 90.00 //CFM 
 double kp =2, ki =0.1, kd =0.01;
-double setPoint = Desired_FlowRate*(100/1023); // we assume flow meter is linear it's range from 0 to 100 CFM 
+double setPoint = Desired_FlowRate*(100/255); // we assume flow meter is linear it's range from 0 to 100 CFM 
 
 PID myPID(kp, ki, kd);
 void setup()
