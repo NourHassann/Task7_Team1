@@ -4,6 +4,7 @@
  *  Breif: control DC motor using Cytron and using Exponential smoothing filter to soft start. 
  */
 /************************************************Macros Start************************************************************/
+#define Limit_sw 7 //Limit switch at top of robot tank to indicate if the tank is full or not.
 #define Motor_Dir 8
 #define Motor_Speed 9
 /*************************************************Macros End*************************************************************/
@@ -19,13 +20,17 @@ void Soft_start (int output,bool Dir );
 void setup() {
   // initial serial communication
   Serial.begin(9600);
+  pinMode(Limit_sw, INPUT_PULLUP);
   pinMode(Motor_Speed, OUTPUT);
   pinMode(Motor_Dir, OUTPUT);
 }
 
 void loop() {
-  // call the function to start the movement. ------- in real time we will not call this function all time. 
-  Soft_start(255, LOW);   //set your desired Speed and Direction
+   //call the function to start the movement. ------- it will works until the tank is full"limit_sw ==HIGH" .
+  while(digitalRead(Limit_sw)== LOW)
+  {
+  Soft_start(255, LOW);   
+  }
 
 }
 /*********************************************Function Definition Start**************************************************/
