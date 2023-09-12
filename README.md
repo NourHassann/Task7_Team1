@@ -8,7 +8,7 @@ title: Classes
 
 
 
-* **class [PID](Classes/classPID.md)** <br>handles the tuning for [PID]() controller 
+* **class [PID](doxyout/Classes/classPID.md)** <br>handles the tuning for [PID]() controller 
 
 
 
