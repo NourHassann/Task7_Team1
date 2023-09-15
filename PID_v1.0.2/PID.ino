@@ -7,7 +7,7 @@
 /*********************************************Global Deceleration Start************************************************************/
 double kp =2, ki =0.1, kd =0.01; 
 double Input =0, Output = 0, error=0; 
-double setPoint = Desired_FlowRate*(1023/100); // we assume flow meter is linear it's range from 0 to 100 CFM 
+double setPoint = Desired_FlowRate*(255/100); // we assume flow meter is linear it's range from 0 to 100 CFM 
 /**********************************************Global Deceleration End*************************************************************/
 PID myPID(kp, ki, kd);
 void setup()
